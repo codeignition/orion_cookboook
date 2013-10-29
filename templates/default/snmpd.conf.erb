@@ -1,0 +1,14 @@
+com2sec local localhost           public
+com2sec mynetwork <%= @cidr%>      public
+group MyRWGroup v1         local
+group MyRWGroup v2c        local
+group MyRWGroup usm        local
+group MyROGroup v1         mynetwork
+group MyROGroup v2c        mynetwork
+group MyROGroup usm        mynetwork
+view all    included .1 80
+access MyROGroup "" any       noauth    exact all    none   none
+access MyRWGroup "" any       noauth    exact all    all    none
+syslocation <%= @node_name%>
+syscontact <%= @contact_name%> <<%= @contact_email%>>
+dontLogTCPWrappersConnects yes

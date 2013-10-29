@@ -7,4 +7,4 @@
 # All rights reserved - Do Not Redistribute
 #
 
-include_recipe "agent"
+include_recipe "orion_cookboook::agent"
