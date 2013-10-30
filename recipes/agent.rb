@@ -7,6 +7,7 @@
 # All rights reserved - Do Not Redistribute
 #
 
+
 package "net-snmp-utils" do
   action :install
 end
@@ -28,3 +29,5 @@ end
 orion_cookboook_orion_agent "apply" do
   action :install
 end
+
+include_recipe "orion_cookboook::ohai_plugin"  if node[:include_ohai]

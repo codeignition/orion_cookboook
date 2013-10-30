@@ -1,0 +1,7 @@
+provides "orion"
+provides "orion/swis_url"
+
+swis_file = File.open("#{node[:orion_agent][:config_path]}/swis.url", "rb")
+
+orion Mash.new unless orion
+orion[:swis_url]    = swis_file.read
