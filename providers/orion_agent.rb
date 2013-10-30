@@ -4,7 +4,6 @@ action :install do
     action :create
   end
 
-
   ruby_block "add in orion server" do
     block do
       require 'rubygems'

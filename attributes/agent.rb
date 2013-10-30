@@ -1,12 +1,12 @@
-default[:node_name] = node.name
 default[:contact_name] = "sumit"
 default[:contact_email] = "sumit@codeignition.co"
 default[:cidr] =  "10.0.0.0/8"
 
-
 default[:orion_server][:ipaddress] = "10.130.1.17"
 default[:orion_server][:user] = "admin"
 default[:orion_server][:password] = "admin"
+
+
 # node data
 default[:orion_agent][:params]["IPAddress"] = node.ipaddress
 default[:orion_agent][:params]["Caption"] = node.fqdn
