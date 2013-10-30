@@ -25,6 +25,7 @@ template "/etc/snmp/snmpd.conf" do
            )
 end
 
+p node
 
 orion_cookboook_orion_agent "apply" do
   action :install
