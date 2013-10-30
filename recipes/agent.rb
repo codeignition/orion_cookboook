@@ -17,10 +17,15 @@ end
 
 template "/etc/snmp/snmpd.conf" do
   source "snmpd.conf.erb"
-  variables( 
+  variables(
             :cidr => node[:cidr],
             :node_name => node[:node_name],
             :contact_name =>node[:contact_name],
             :contact_email => node[:contact_email]
            )
+end
+
+
+orion_cookboook_orion_agent "apply" do
+  action :install
 end
